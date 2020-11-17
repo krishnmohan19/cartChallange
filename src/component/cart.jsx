@@ -1,28 +1,39 @@
-import { blue, yellow } from '@material-ui/core/colors';
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
+function Cart(props) {
+  const [count, setcount] = useState(0);
+  function increase() {
+    setcount(count + 1);
+    props.maintainProduct(1);
+  }
+  function decrease() {
+    setcount(count === 0 ? 0 : count - 1);
+    props.maintainProduct(count===0?0:-1);
+  }
 
-function Cart(props){
-    let [value,setValue]=useState(0);
-    
-    function increase(){
-        setValue(value+1);
-        
-    }
-    function decrease(){   
-        setValue(value===0?0:value-1);
-        
-    }
-    
-    return <div className="cartStyle">
-        <p align="center" value={value} style={{backgroundColor:value>0?"blue":"yellow",color:value>0?"white":"black"}}>
-        {value===0?"Zero":value}
-        </p>
-        <button onClick={increase}>Increase</button>
-        <button onClick={decrease}>Decrease</button>
-        <button className="deleteButton">Delete</button>
-    </div>;
+  return (
+    <div className="cartStyle">
+      <p
+        align="center"
+        value={count}
+        style={{
+          backgroundColor: count > 0 ? "blue" : "yellow",
+          color: count > 0 ? "white" : "black"
+        }}
+      >
+        {count === 0 ? "Zero" : count}
+      </p>
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
+      <button
+        className="deleteButton"
+        onClick={() => {
+          props.deleteIteam(props.ID,count);
+        }}
+      >
+        Delete
+      </button>
+    </div>
+  );
 }
-
-
 export default Cart;
