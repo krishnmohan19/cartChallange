@@ -1,0 +1,50 @@
+html {
+    font-family: 'Poppins', sans-serif;
+  }
+
+header {
+    background-color: #57534b;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+header h1 {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: 3rem;
+    margin: auto 100px;
+}
+
+.cartStyle{
+     background-color: #fff;
+     margin: 32px 16px 10px;
+}
+
+button {
+    position:relative;
+    margin:2px;
+    padding: 5px 15px;
+    background-color:#57534b;
+    color: #fff;
+    border: 0ch;
+}
+.deleteButton{
+    margin: auto 10px;
+    background-color: red;
+
+}
+
+p {
+    background-color: yellow;
+    margin: auto 10px;
+    font-weight: bolder;
+    width:60px;
+}
+
+i {
+    position: relative;
+    left:800px;
+
+}
