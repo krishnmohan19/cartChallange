@@ -18,7 +18,9 @@ function Cart(props) {
         value={count}
         style={{
           backgroundColor: count > 0 ? "blue" : "yellow",
-          color: count > 0 ? "white" : "black"
+          color: count > 0 ? "white" : "black",
+          display: "inline-block",
+          width: '70px'
         }}
       >
         {count === 0 ? "Zero" : count}
